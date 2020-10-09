@@ -5,19 +5,23 @@
   "scripts": {
     "dev": "next dev -p 9045",
     "build": "next build",
+    "deploy": "next build && next export",
     "start": "next start -p 9045",
-    "lint": "eslint 'src/**' --max-warnings=0"
+    "lint": "eslint 'src/**' --max-warnings=0",
+    "postbuild": "next-on-netlify"
   },
   "dependencies": {
     "axios": "^0.20.0",
     "next": "9.5.4",
+    "next-on-netlify": "^2.5.1",
     "next-seo": "^4.11.0",
     "polished": "^4.0.1",
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "styled-components": "^5.2.0",
     "styled-icons": "^10.22.0",
-    "styled-media-query": "^2.1.2"
+    "styled-media-query": "^2.1.2",
+    "webpack": "^4.44.2"
   },
   "devDependencies": {
     "babel-plugin-styled-components": "^1.11.1",
