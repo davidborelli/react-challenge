@@ -1,8 +1,15 @@
 import styled, { css } from 'styled-components'
+import media from 'styled-media-query'
 
 export const PaginationWrapper = styled.div`
   display: flex;
   align-items: center;
+
+  ${({ theme }) => css`
+    ${media.lessThan('small')`
+      font-size: ${theme.font.sizes.xxsmall}
+    `}
+  `}
 `
 
 export const Navigator = styled.div`

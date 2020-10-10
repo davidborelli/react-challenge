@@ -20,6 +20,10 @@ export const SectionSearchResultData = styled.h1`
     > div.result span {
       color: ${theme.colors.primary};
     }
+
+    ${media.lessThan('small')`
+      font-size: ${theme.font.sizes.xsmall};
+    `}
   `}
 `
 
@@ -33,6 +37,12 @@ export const SectionSearchTitle = styled.span`
     color: ${theme.colors.texts};
     font-weight: ${theme.font.bold};
   `}
+
+  ${media.lessThan('small')`
+    ${({ theme }) => css`
+      margin-bottom: ${theme.spacings.xsmall};
+    `}
+  `}
 `
 
 export const SearchResultContainer = styled.div`
@@ -40,6 +50,10 @@ export const SearchResultContainer = styled.div`
   grid-template-columns: repeat(3, 1fr);
   ${({ theme }) => css`
     grid-gap: ${theme.spacings.xsmall};
+
+    ${media.lessThan('medium')`
+      grid-gap: ${theme.spacings.xxsmall};
+    `}
   `}
 
   ${media.lessThan('medium')`

@@ -10,5 +10,9 @@ export const ContainerWrapper = styled.div`
     ${media.greaterThan('medium')`
       padding: 0 calc(${theme.spacings.small} / 2);
     `}
+
+    ${media.lessThan('small')`
+      padding: 0 calc(${theme.spacings.xsmall} / 2);
+    `}
   `}
 `

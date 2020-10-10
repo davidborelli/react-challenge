@@ -14,10 +14,10 @@ export const Container = styled.section`
 
     ${media.lessThan('small')`
       padding: ${theme.spacings.xxsmall};
+      margin: ${theme.spacings.xxsmall} auto;
     `}
   `}
 
-  /* height: 100vh; */
   width: 100%;
 `
 

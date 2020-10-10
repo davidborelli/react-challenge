@@ -10,6 +10,10 @@ export const SearchResultItemWrapper = styled.div`
   ${({ theme }) => css`
     padding: ${theme.spacings.xxsmall};
     border-radius: ${theme.border.radius};
+
+    ${media.lessThan('small')`
+      padding: 0;
+    `}
   `}
 
   ${media.lessThan('medium')`
@@ -60,9 +64,12 @@ export const SearchResultIDetails = styled.div`
 
   ${({ theme }) => css`
     margin-left: ${theme.spacings.small};
+    ${media.lessThan('small')`
+      margin-left: ${theme.spacings.xxsmall};
+    `}
   `}
 
-  ${media.greaterThan('medium')`
+  ${media.greaterThan('large')`
     margin 0;
   `}
 `

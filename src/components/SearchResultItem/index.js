@@ -12,31 +12,33 @@ export default function SearchResultItem({ item }) {
   const [{ featured_media, title, categories, id }] = useState(item)
 
   return (
-    <S.SearchResultItemWrapper>
-      <Link href={id.toString()}>
-        <S.SearchResultPhoto
-          src={featured_media.thumbnail}
-          alt={title}
-          onClick={() => setShowModal(true)}
-        />
-      </Link>
-
-      <S.SearchResultIDetails>
-        <div>
-          {categories.map(({ name, id, link }) => (
-            <a href={link} key={id}>
-              <Tag>{name}</Tag>
-            </a>
-          ))}
-        </div>
-        <Link href={id.toString()}>
-          <S.SearchResulTitle onClick={() => setShowModal(true)}>
-            {title}
-          </S.SearchResulTitle>
-        </Link>
-      </S.SearchResultIDetails>
+    <>
       {showModal && <Modal />}
-    </S.SearchResultItemWrapper>
+      <S.SearchResultItemWrapper>
+        <Link href={id.toString()}>
+          <S.SearchResultPhoto
+            src={featured_media.thumbnail}
+            alt={title}
+            onClick={() => setShowModal(true)}
+          />
+        </Link>
+
+        <S.SearchResultIDetails>
+          <div>
+            {categories.map(({ name, id, link }) => (
+              <a href={link} key={id}>
+                <Tag>{name}</Tag>
+              </a>
+            ))}
+          </div>
+          <Link href={id.toString()}>
+            <S.SearchResulTitle onClick={() => setShowModal(true)}>
+              {title}
+            </S.SearchResulTitle>
+          </Link>
+        </S.SearchResultIDetails>
+      </S.SearchResultItemWrapper>
+    </>
   )
 }
 

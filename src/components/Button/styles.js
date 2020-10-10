@@ -1,5 +1,6 @@
 import styled, { css } from 'styled-components'
 import { darken, lighten } from 'polished'
+import media from 'styled-media-query'
 
 export const ButtonWrapper = styled.a`
   display: flex;
@@ -29,5 +30,9 @@ export const ButtonWrapper = styled.a`
     &:hover {
       border-color: ${theme.colors.gray};
     }
+
+    ${media.lessThan('small')`
+      font-size: calc(${theme.font.sizes.large} / 2);
+    `}
   `}
 `

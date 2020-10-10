@@ -15,14 +15,18 @@ export const ModalWrapper = styled.div`
   align-items: center;
   flex-direction: column;
 
-  transition: height 0.4s ease-in;
-  position: absolute;
+  transition: opacity 400ms ease-in;
+  position: fixed;
   top: 0;
+  right: 0;
+  bottom: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
+  z-index: 99999;
+
   background: #2f2d48;
-  opacity: 0.7;
+  opacity: 0.8;
+  pointer-events: none;
+  cursor: none;
 
   > span {
     font-size: 3rem;
